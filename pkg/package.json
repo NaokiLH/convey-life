@@ -1,0 +1,13 @@
+{
+  "name": "convey_life",
+  "version": "0.1.0",
+  "files": [
+    "convey_life_bg.wasm",
+    "convey_life.js",
+    "convey_life_bg.js",
+    "convey_life.d.ts"
+  ],
+  "module": "convey_life.js",
+  "types": "convey_life.d.ts",
+  "sideEffects": false
+}
