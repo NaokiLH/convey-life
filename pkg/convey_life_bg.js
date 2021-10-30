@@ -58,6 +58,27 @@ export class Universe {
         return Universe.__wrap(ret);
     }
     /**
+    * @returns {number}
+    */
+    width() {
+        var ret = wasm.universe_width(this.ptr);
+        return ret >>> 0;
+    }
+    /**
+    * @returns {number}
+    */
+    height() {
+        var ret = wasm.universe_height(this.ptr);
+        return ret >>> 0;
+    }
+    /**
+    * @returns {number}
+    */
+    cells() {
+        var ret = wasm.universe_cells(this.ptr);
+        return ret;
+    }
+    /**
     * @returns {string}
     */
     render() {
