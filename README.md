@@ -2,6 +2,8 @@
 
 a convey-life demo dev with rust in wasm
 
+![convey-life](https://files.catbox.moe/supwef.gif)
+
 ### Dependencies
 - rust toolchain
 - node.js
