@@ -25,6 +25,8 @@ function getInt32Memory0() {
     }
     return cachegetInt32Memory0;
 }
+
+function notDefined(what) { return () => { throw new Error(`${what} is not defined`); }; }
 /**
 */
 export const Cell = Object.freeze({ Dead:0,"0":"Dead",Alive:1,"1":"Alive", });
@@ -99,6 +101,8 @@ export class Universe {
         wasm.universe_tick(this.ptr);
     }
 }
+
+export const __wbg_random_a582babfa4489c72 = typeof Math.random == 'function' ? Math.random : notDefined('Math.random');
 
 export function __wbindgen_throw(arg0, arg1) {
     throw new Error(getStringFromWasm0(arg0, arg1));
