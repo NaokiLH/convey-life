@@ -10,3 +10,5 @@ wasm-bindgen = "*"
 js-sys = "*"
 [lib]
 crate-type = ["cdylib", "rlib"]
+[dev-dependencies]
+wasm-bindgen-test = "*"

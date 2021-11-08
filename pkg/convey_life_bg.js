@@ -96,6 +96,24 @@ export class Universe {
         }
     }
     /**
+    * Set the width of the universe.
+    *
+    * Resets all cells to the dead state.
+    * @param {number} width
+    */
+    set_width(width) {
+        wasm.universe_set_width(this.ptr, width);
+    }
+    /**
+    * Set the height of the universe.
+    *
+    * Resets all cells to the dead state.
+    * @param {number} height
+    */
+    set_height(height) {
+        wasm.universe_set_height(this.ptr, height);
+    }
+    /**
     */
     tick() {
         wasm.universe_tick(this.ptr);
