@@ -15,6 +15,9 @@ export class Universe {
 */
   static new(): Universe;
 /**
+*/
+  reset(): void;
+/**
 * @returns {number}
 */
   width(): number;
@@ -30,6 +33,11 @@ export class Universe {
 * @returns {string}
 */
   render(): string;
+/**
+* @param {number} row
+* @param {number} col
+*/
+  toggle_cell(row: number, col: number): void;
 /**
 * Set the width of the universe.
 *

@@ -15,6 +15,16 @@ pub struct Universe {
     height: u32,
     cells: Vec<Cell>,
 }
+
+impl Cell {
+    fn toggle(&mut self) {
+        *self = match *self {
+            Cell::Dead => Cell::Alive,
+            Cell::Alive => Cell::Dead,
+        }
+    }
+}
+
 impl Universe {
     fn get_index(&self, row: u32, col: u32) -> usize {
         (row * self.width + col) as usize
@@ -35,9 +45,6 @@ impl Universe {
 
         count
     }
-}
-// use to test
-impl Universe {
     /// Get the dead and alive values of the entire universe.
     pub fn get_cells(&self) -> &[Cell] {
         &self.cells
@@ -74,6 +81,11 @@ impl Universe {
             cells,
         }
     }
+    pub fn reset(&mut self) {
+        for cell in self.cells.iter_mut() {
+            *cell = Cell::Dead;
+        }
+    }
     pub fn width(&self) -> u32 {
         self.width
     }
@@ -86,6 +98,11 @@ impl Universe {
     pub fn render(&self) -> String {
         self.to_string()
     }
+    pub fn toggle_cell(&mut self, row: u32, col: u32) {
+        let id = self.get_index(row, col);
+        self.cells[id].toggle();
+    }
+
     /// Set the width of the universe.
     ///
     /// Resets all cells to the dead state.

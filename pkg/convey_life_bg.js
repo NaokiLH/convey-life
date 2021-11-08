@@ -60,6 +60,11 @@ export class Universe {
         return Universe.__wrap(ret);
     }
     /**
+    */
+    reset() {
+        wasm.universe_reset(this.ptr);
+    }
+    /**
     * @returns {number}
     */
     width() {
@@ -94,6 +99,13 @@ export class Universe {
             wasm.__wbindgen_add_to_stack_pointer(16);
             wasm.__wbindgen_free(r0, r1);
         }
+    }
+    /**
+    * @param {number} row
+    * @param {number} col
+    */
+    toggle_cell(row, col) {
+        wasm.universe_toggle_cell(this.ptr, row, col);
     }
     /**
     * Set the width of the universe.
